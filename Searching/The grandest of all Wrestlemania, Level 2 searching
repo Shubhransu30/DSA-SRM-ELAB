@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t,i,b,r,d=0,c=0;
+    cin>>t;
+    for(i=0; i<t; i++)
+    {
+        cin>>b;
+            c=0;d=0;
+            while(b>0)
+            {
+                r=b%10;
+                if(r==2&&d==1)
+                c=1;
+                if(r==1)
+                d=1;
+                b=b/10;
+            }
+            if((c+d)==2)
+            cout<<"The streak is broken!"<<endl;
+            else
+            cout<<"The streak lives still in our heart!"<<endl;
+    }
+    return 0;
+}
