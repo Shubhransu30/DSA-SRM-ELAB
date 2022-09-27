@@ -1,0 +1,33 @@
+#include <stdio.h>
+void sort(int a[],int n)
+{
+    int temp,i,j;
+    for(i=0;i<n-1;i++)
+     for(j=0;j<n-i-1;j++)
+       if(a[j]>a[j+1])
+       { 
+         temp=a[j];
+         a[j]=a[j+1];
+         a[j+1]=temp;
+       }
+    
+}
+int main()
+{
+    int n,i,j,s;
+    scanf("%d",&n);
+    for(j=0;j<n;j++)
+    {
+        int a,b;
+        scanf("%d %d",&a,&b);
+        int A[a];
+        for(i=0;i<a;i++)
+         scanf("%d",&A[i]);
+        sort(A,a);
+        s=A[a-1];
+        if(s<b)
+         printf("-1");
+        else
+         printf("%d",s-b);
+        printf("\n");
+    }
