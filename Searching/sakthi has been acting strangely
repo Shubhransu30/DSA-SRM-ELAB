@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+int A[500];
+int binarySearch(int low,int high,int key){
+   for (int i = low; i < (high - 1); i++)
+      for (int j = (i + 1); j < high; j++)
+         if (A[i] + A[j] == key)
+            return 1;
+   return 0;
+}
+
+int main() {
+   int n, c;
+   cin >> n;
+   for (int a = 0; a < n; a++) {
+      A[a] = ((a + 1) * (a + 2)) / 2;
+      if (A[a] > n) {
+         c = a;
+         break;
+      }
+   }
+   if (binarySearch(0, c, n)) {
+      cout << "YES" << endl;
+   }
+   else {
+      cout << "NO" << endl;
+   }
+   return 0;
+}
