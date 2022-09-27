@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num,sum=0,cnt=0;
+    cin >> num;
+    int a[num];
+    while(num){
+        cin >> a[num];
+        if (a[num]>0){
+            sum = sum + a[num];
+            cnt++;
+        }
+         num--;
+        
+    }
+    if(cnt==0){}
+
+    cout << sum << " " << cnt;
+    return 0;
+}
